@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{{ url_for('index') }}">Image Classification</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <!-- Upload & Train Card -->
+            <div class="col-md-6 mb-4">
+                <div class="card card-hover shadow">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Upload and Train Model</h5>
+                        <p class="card-text">Upload new training images to improve the classification model.</p>
+                        <a href="{{ url_for('upload_train') }}" class="btn btn-dark">
+                            <i class="fas fa-upload"></i> Go to Upload & Train
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Classify Card -->
+            <div class="col-md-6 mb-4">
+                <div class="card card-hover shadow">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Classify Image</h5>
+                        <p class="card-text">Upload an image to classify it using our trained model.</p>
+                        <a href="{{ url_for('classify') }}" class="btn btn-dark">
+                            <i class="fas fa-image"></i> Go to Classify
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card for Trained Models -->
+            <div class="col-md-6 mb-4">
+                <div class="card card-hover shadow">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">View Trained Models</h5>
+                        <p class="card-text">Click here to see the list of models that have been trained.</p>
+                        <a href="{{ url_for('trained_models') }}" class="btn btn-dark">
+                            <i class="fas fa-list"></i> List of Models
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
